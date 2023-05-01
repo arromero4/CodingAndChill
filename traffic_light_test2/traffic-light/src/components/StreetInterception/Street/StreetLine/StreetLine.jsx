@@ -1,14 +1,27 @@
-import React from 'react'
-import Car from './Car'
+import React from "react";
+import Car from "./Car";
 
-const StreetLine = () => {
+const StreetLine = ({ direction, cars, activatedLight }) => {
   return (
     <>
-    <div>
-        <Car/>
-    </div>
+      <div style={styles.container}>
+        {cars?.map((car, index) => (
+          <Car
+            car={car}
+            key={index}
+            direction={direction}
+            activatedLight={activatedLight}
+          />
+        ))}
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default StreetLine
+const styles = {
+    container: {
+      display: 'flex'
+    }
+  };
+
+export default StreetLine;

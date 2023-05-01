@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import TrafficLight from "./TrafficLight/TrafficLight";
+import Street from "./Street/Street";
 
 const StreetInterception = () => {
   const [activatedLight, setActivatedLight] = useState("yellow");
@@ -36,6 +37,7 @@ const StreetInterception = () => {
           activatedLight={activatedLight}
           setActivatedLight={setActivatedLight}
         />
+        <Street activatedLight={activatedLight}/>
       </div>
     </>
   );
