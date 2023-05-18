@@ -10,7 +10,7 @@ import ssl
 import smtplib
 
 email_sender = 'arromero0408@gmail.com'
-email_password = 'ilswdqqptqmzykih'
+email_password = ''
 email_receiver = 'arromero0408@gmail.com'
 
 subject = 'Practice coding'
