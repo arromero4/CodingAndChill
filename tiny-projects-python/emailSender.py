@@ -14,9 +14,7 @@ email_password = ''
 email_receiver = 'arromero0408@gmail.com'
 
 subject = 'Practice coding'
-body = """
-You need to practice if you want to improve
-"""
+body = """You need to practice if you want to improve"""
 
 em = EmailMessage()
 em['From'] = email_sender
