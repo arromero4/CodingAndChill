@@ -1,4 +1,5 @@
 """Python practice"""
+"""function that helps to replace words with an input"""
 def replace_word():
     str = "Hi guys, I'm Andres and hi hi hi hi"
 
