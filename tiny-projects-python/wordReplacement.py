@@ -1,3 +1,4 @@
+"""Python practice"""
 def replace_word():
     str = "Hi guys, I'm Andres and hi hi hi hi"
 
