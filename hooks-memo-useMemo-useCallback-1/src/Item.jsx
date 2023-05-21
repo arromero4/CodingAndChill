@@ -1,17 +1,16 @@
-import React from 'react'
-import { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 
-const Item = ({ user }) => {
+const Item = memo(({ user }) => {
     
     useEffect(() => {
-        console.log('item render')
+        //console.log('item render')
       },[])
   return (
     <li>
         {user.name}
     </li>
   )
-}
+})
 
 
 export default Item

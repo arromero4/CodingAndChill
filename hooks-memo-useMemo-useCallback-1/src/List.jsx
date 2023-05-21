@@ -1,10 +1,10 @@
 import React from 'react'
 import Item from './Item'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 
-const List = ({ users }) => {
+const List = memo(({ users }) => {
   useEffect(() => {
-    console.log('list render')
+    //console.log('list render')
   },[])
 
   return (
@@ -15,6 +15,6 @@ const List = ({ users }) => {
         ))}
     </ul>
   )
-}
+})
 
 export default List
