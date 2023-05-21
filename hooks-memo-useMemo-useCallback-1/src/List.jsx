@@ -1,20 +1,19 @@
-import React from 'react'
-import Item from './Item'
-import { memo, useEffect } from 'react'
+import React from "react";
+import Item from "./Item";
+import { memo, useEffect } from "react";
 
-const List = memo(({ users }) => {
+const List = memo(({ users, handleDelete }) => {
   useEffect(() => {
-    //console.log('list render')
-  },[])
+    //console.log("list render");
+  }, []);
 
   return (
     <ul>
-      {
-        users.map(user => (
-          <Item  key={user.id} user={user} / >
-        ))}
+      {users.map((user) => (
+        <Item key={user.id} user={user} handleDelete={handleDelete} />
+      ))}
     </ul>
-  )
-})
+  );
+});
 
-export default List
+export default List;

@@ -1,16 +1,15 @@
-import React, { memo, useEffect } from 'react'
+import React, { memo, useEffect } from "react";
 
-const Item = memo(({ user }) => {
-    
-    useEffect(() => {
-        //console.log('item render')
-      },[])
+const Item = memo(({ user, handleDelete }) => {
+  useEffect(() => {
+    //console.log("item render");
+  }, []);
   return (
     <li>
-        {user.name}
+      {user.name}
+      <button onClick={() => handleDelete(user.id)}>Delete</button>
     </li>
-  )
-})
+  );
+});
 
-
-export default Item
+export default Item;
