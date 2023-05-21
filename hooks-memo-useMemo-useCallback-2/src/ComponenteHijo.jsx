@@ -13,4 +13,4 @@ const ComponenteHijo = ({ texto, cuenta, sumarUno }) => {
   );
 };
 
-export default ComponenteHijo;
+export default React.memo(ComponenteHijo);

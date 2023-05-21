@@ -9,4 +9,4 @@ const Encabezado = () => {
   );
 };
 
-export default Encabezado;
+export default React.memo(Encabezado);
