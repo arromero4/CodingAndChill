@@ -1,25 +1,18 @@
-import { useState, useEffect } from "react";
 import "./App.css";
+import { Otro } from "./components/Otro";
+import { useCatFact } from "./hooks/useCatFact";
+;import { useCatImage } from "./hooks/useCatImage";
 
-const CAT_ENDPOINT_RANDOM_FACT = "https://catfact.ninja/fact";
-const CAT_PREFIX_IMAGE_URL = "https://cataas.com";
+
+
+
 
 export function App() {
-  const [fact, setFact] = useState("");
-  const [imageUrl, setImageUrl] = useState(null);
-
+  const { fact, refreshFact } = useCatFact()
+  const { imageUrl } = useCatImage({ fact }) 
+  
   //siempre poner las dependencias
   //useEffect(() =>{},[])
-
-  //un efecto para recuperar la cita al cargar la pagina
-  useEffect(() => {
-    fetch(CAT_ENDPOINT_RANDOM_FACT)
-      .then((res) => res.json())
-      .then((data) => {
-        const { fact } = data;
-        setFact(fact);
-      });
-  }, []);
 
   // useEffect(() =>{
   //   async function getRandomFact(){
@@ -30,35 +23,28 @@ export function App() {
   //   getRandomFact()
   // },[])
 
-  //para recuperar la imagen cada vez que tenemos una cita nueva
-  useEffect(() => {
-    if (!fact) return;
-    //const firstWord = fact.split(' ').slice(0,3).join(' ')
-    const firstWords = fact.split(" ", 3).join(" ");
-    console.log(firstWords);
 
-    fetch(
-      `https://cataas.com/cat/says/${firstWords}?size=50&color=red&json=true`
-    )
-      .then((res) => res.json())
-      .then((response) => {
-        console.log(response);
-        const { url } = response;
-        setImageUrl(url);
-      });
-  }, []);
+
+  const handleClick = async () => {
+    refreshFact()
+  }
 
   return (
     <main>
       <h1>App de Gatitos</h1>
+
       <section>
+        <button onClick={handleClick}>
+          Get new fact!
+        </button>
         {fact && <p>{fact}</p>}
         {imageUrl && (
           <img
-            src={`${CAT_PREFIX_IMAGE_URL}${imageUrl}`}
+            src={imageUrl}
             alt={`Image extracted using the first three words for ${fact}`}
           />
         )}
+        <Otro />
       </section>
     </main>
   );
