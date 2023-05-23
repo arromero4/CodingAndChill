@@ -14,7 +14,7 @@ def binary_search(list, target):
     steps = 0
 
     while start <= end:
-        print("Step", steps, ":", str(list[start:end+1]), "\n",middle, "\n")
+        print("Step", steps, ":", str(list[start:end+1]), "\nMiddle: ",middle, "\n")
 
         steps += 1
         middle = (start + end) // 2
@@ -32,5 +32,6 @@ def binary_search(list, target):
     return -1
 
 my_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+          #0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
 target = 16
 binary_search(my_list, target)
