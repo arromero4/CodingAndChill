@@ -33,7 +33,7 @@ export function App() {
     <main>
       <h1>App de Gatitos</h1>
 
-      <section>
+
         <button onClick={handleClick}>
           Get new fact!
         </button>
@@ -45,7 +45,6 @@ export function App() {
           />
         )}
         <Otro />
-      </section>
     </main>
   );
 }
