@@ -3,39 +3,44 @@ import "./App.css";
 import { Movies } from "./components/Movies.jsx";
 import { useMovies } from "./hooks/useMovies.js";
 
-function App() {
-  const { movies } = useMovies();
-  const [query, setQuery] = useState("");
+function useSearch(){
+  const [search, updateSearch] = useState('')
   const [error, setError] = useState(null);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //const { query } = Object.fromEntries(new window.FormData(event.target));
-    console.log({ query });
-  };
-
-  const handleChange = (event) => {
-    const newQuery = event.target.value
-    if(newQuery.startsWith(' ')) return
-    setQuery(event.target.value)
-  }
-
   useEffect(() => {
-    if(query === ''){
+    if(search === ''){
       setError('No se puede buscar una película vacía')
       return
     }
-    if(query.match(/^\d+$/)){
+    if(search.match(/^\d+$/)){
       setError('No se puede buscar una película con números')
       return
     }
-    if(query.length < 3){
+    if(search.length < 3){
       setError('No se puede buscar una película con menos de 3 caracteres')
       return
     }
 
     setError(null)
-  },[query])
+  },[search])
+  return {search, updateSearch, error}
+}
+
+function App() {
+  const { movies } = useMovies();
+  const { search, updateSearch, error } = useSearch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log({ search });
+  };
+
+  const handleChange = (event) => {
+    const newSearch = event.target.value
+    updateSearch(newSearch)
+  }
+
+ 
 
 
   return (
@@ -44,7 +49,7 @@ function App() {
         <h1>Buscador de Películas</h1>
         <form className="form" onSubmit={handleSubmit}>
           <input
-            value={query}
+            value={search}
             onChange={handleChange}
             name="query"
             type="text"
