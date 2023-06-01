@@ -4,7 +4,7 @@ multiple variables: middle, start, end, steps
 recursion or while loop
 increase the steps each the split is done
 conditions to track target position
-[1,2,3,4,5,6,7,8,9,10]
+
 
 """
 def binary_search(list, target):
