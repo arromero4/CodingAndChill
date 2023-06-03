@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { Movies } from "./components/Movies.jsx";
 import { useMovies } from "./hooks/useMovies.js";
-
+//keep learning hooks caradeverga
 function useSearch(){
   const [search, updateSearch] = useState('')
   const [error, setError] = useState(null);
