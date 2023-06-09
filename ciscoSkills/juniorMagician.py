@@ -11,4 +11,26 @@ The magician is counting on you! Don't disappoint him.
 
   EXTRA INFO  
 By the way, look at the print() function. The way we've used it here is called multi-line printing. You can use triple quotes to print strings on multiple lines in order to make text easier to read, or create a special text-based design. Experiment with it.
+
+El operador != (no es igual a) también compara los valores de dos operandos. Aquí está la diferencia: si son iguales, el resultado de la comparación es False. Si no son iguales, el resultado de la comparación es True.
 """
+
+secret_number = 777
+
+print(
+"""
++================================+
+| Welcome to my game, muggle!    |
+| Enter an integer number        |
+| and guess what number I've     |
+| picked for you.                |
+| So, what is the secret number? |
++================================+
+""")
+
+guess = int(input("Try to guess. Enter a your number: "))
+
+while guess != secret_number:
+    print("Ha ha! You're stuck in my loop!")
+    guess = int(input("Try to guess. Enter a your number: "))
+print("Well done, muggle! You are free now.")
