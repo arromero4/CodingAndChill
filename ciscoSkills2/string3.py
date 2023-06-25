@@ -19,3 +19,63 @@ if "epsilon".endswith("on"):
 else:
     print("no")
 
+t = "zeta"
+print(t.endswith("a"))
+print(t.endswith("A"))
+print(t.endswith("et"))
+print(t.endswith("eta"))
+
+
+# Demonstrating the find() method:
+print("Eta".find("ta"))
+print("Eta".find("mma"))
+
+t = 'theta'
+print(t.find('eta'))
+print(t.find('et'))
+print(t.find('the'))
+print(t.find('ha'))
+
+the_text = """A variation of the ordinary lorem ipsum
+text has been used in typesetting since the 1960s 
+or earlier, when it was popularized by advertisements 
+for Letraset transfer sheets. It was introduced to 
+the Information Age in the mid-1980s by the Aldus Corporation, 
+which employed it in graphics and word-processing templates
+for its desktop publishing program PageMaker (from Wikipedia)"""
+
+fnd = the_text.find('the')
+while fnd != -1:
+    print(fnd)
+    fnd = the_text.find('the', fnd + 1)
+
+
+print('kappa'.find('a', 1, 4))
+print('kappa'.find('a', 2, 4))
+
+
+# Demonstrating the isalnum() method:
+print('lambda30'.isalnum())
+print('lambda'.isalnum())
+print('30'.isalnum())
+print('@'.isalnum())
+print('lambda_30'.isalnum())
+print(''.isalnum())
+
+t = 'Six lambdas'
+print(t.isalnum())
+
+t = '&Alpha;&beta;&Gamma;&delta;'
+print(t.isalnum())
+
+t = '20E1'
+print(t.isalnum())
+
+
+# Example 1: Demonstrating the isapha() method:
+print("Moooo".isalpha())
+print('Mu40'.isalpha())
+    
+# Example 2: Demonstrating the isdigit() method:
+print('2018'.isdigit())
+print("Year2019".isdigit())
