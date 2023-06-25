@@ -1,0 +1,10 @@
+# Demonstrating the capitalize() method:
+print('aBcD'.capitalize())
+print("Alpha".capitalize())
+print('ALPHA'.capitalize())
+print(' Alpha'.capitalize())
+print('123'.capitalize())
+print("αβγδ".capitalize())
+
+# Demonstrating the center() method:
+print('[' + 'alpha'.center(10) + ']')
