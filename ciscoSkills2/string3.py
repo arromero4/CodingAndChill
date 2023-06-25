@@ -79,3 +79,54 @@ print('Mu40'.isalpha())
 # Example 2: Demonstrating the isdigit() method:
 print('2018'.isdigit())
 print("Year2019".isdigit())
+
+# Example: Demonstrating the islower() method:
+print("Moooo".islower())
+print('moooo'.islower())
+
+
+# Example: Demonstrating the isspace() method:
+print(' \n '.isspace())
+print(" ".isspace())
+print("mooo mooo mooo".isspace())
+
+# Example: Demonstrating the isupper() method:
+print("Moooo".isupper())
+print('moooo'.isupper())
+print('MOOOO'.isupper())
+
+# Demonstrating the join() method:
+print(",".join(["omicron", "pi", "rho"]))
+
+# Demonstrating the lower() method:
+print("SiGmA=60".lower())
+
+# Demonstrating the lstrip() method:
+print("[" + " tau ".lstrip() + "]")
+print("www.cisco.com".lstrip("w."))
+
+# Demonstrating the replace() method:
+print("www.netacad.com".replace("netacad.com", "pythoninstitute.org"))
+print("This is it!".replace("is", "are"))
+print("Apple juice".replace("juice", ""))
+
+print("This is it!".replace("is", "are", 1))
+print("This is it!".replace("is", "are", 2))
+
+# Demonstrating the rfind() method:
+print("tau tau tau".rfind("ta"))
+print("tau tau tau".rfind("ta", 9))
+print("tau tau tau".rfind("ta", 3, 9))
+
+# Demonstrating the rstrip() method:
+print("[" + " upsilon ".rstrip() + "]")
+print("cisco.com".rstrip(".com"))
+
+# Demonstrating the split() method:
+print("phi       chi\npsi".split())
+
+# Demonstrating the startswith() method:
+print("omega".startswith("meg"))
+print("omega".startswith("om"))
+
+print()
