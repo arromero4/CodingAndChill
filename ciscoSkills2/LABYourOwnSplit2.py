@@ -33,8 +33,26 @@ def mysplit(strng):
     return words
 
 
-print(mysplit("To be or not to be, that is the question"))
-print(mysplit("To be or not to be,that is the question"))
-print(mysplit("   "))
-print(mysplit(" abc "))
-print(mysplit(""))
+print(mysplit("To be or not to be, that is the question")) #['To', 'be', 'or', 'not', 'to', 'be,', 'that', 'is', 'the', 'question']
+print(mysplit("To be or not to be,that is the question"))#['To', 'be', 'or', 'not', 'to', 'be,that', 'is', 'the', 'question']
+print(mysplit("   ")) #[]
+print(mysplit(" abc "))#['abc']
+print(mysplit(""))#[]
+
+#Converting int and float to string
+itg = 13
+flt = 1.3
+si = str(itg)
+sf = str(flt)
+
+print(si + ' ' + sf)
+
+
+#The reverse transformation (string-number)
+si = '13'
+sf = '1.3'
+itg = int(si)
+flt = float(sf)
+
+print(itg + flt)
+    
