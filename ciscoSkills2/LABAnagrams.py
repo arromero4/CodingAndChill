@@ -36,17 +36,23 @@ Output
 
 '''
 def check_anagrams(text1, text2):
-    firstWord = list(text1.lower())
-    ordered1 = firstWord
-    secondWord = list(text2.lower())
-    ordered2 = secondWord
-    print(ordered1)
-    print(ordered2)   
+    firstWord = "".join(sorted(list(text1.lower()))) 
+    #pasamos la palabra a minusculas
+    #la convertimos en lista
+    #la ordenamos
+    #la unimos
+    secondWord = "".join(sorted(list(text2.lower())))
+    
+    #revisar si son iguales al estar ordenadas
+    return firstWord == secondWord
 
 print('Se revisaran dos palabras para determinar si son Anagramas')
-text1 = 'Listen' #input('Ingrese la primera palabra: ')
-text2 = 'Silent'#input('Ingrese la segunda palabra: ')
+text1 = input('Ingrese la primera palabra: ')
+text2 = input('Ingrese la segunda palabra: ')
 
 anagrams = check_anagrams(text1, text2)
 
-#print('Las palabras son: ' + anagrams)
+if anagrams:
+    print('Las palabras son anagramas')
+else:
+    print('Las palabras no son anagramas')
