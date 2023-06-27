@@ -31,38 +31,31 @@ Salida de muestra:
 Sgd chd hr bzrs
 '''	
 # Caesar cipher.
-def cifrado_cesar(texto, valor_cambio):
-    resultado = ""
-    
-    for carac in texto:
-        # Comprobar si el carácter es alfabético
-        if carac.isalpha():
-            # Obtener el valor numérico del carácter
-            valor = ord(carac)
-            
-            # Determinar si el carácter es mayúscula o minúscula
-            if carac.isupper():
-                base = ord('A')
+def cipher_cesar(text, valor_cambio):
+    resultado = ''
+
+    for char in text:
+        if char.isalpha():
+            valorNumerico = ord(char)
+        
+            if char.isupper():
+                baseASCII = ord('A')
             else:
-                base = ord('a')
-            
-            # Calcular el nuevo valor desplazado
-            nuevo_valor = (valor - base + valor_cambio) % 26 + base
-            
-            # Convertir el nuevo valor en carácter y agregarlo al resultado
-            resultado += chr(nuevo_valor)
+                baseASCII = ord('a')
+        
+            nuevoValor = (valorNumerico - baseASCII + valor_cambio) % 26 + baseASCII #valor punto de codigo menos la base que puede ser 97 o 65 más el valor de cambio que ingresó el usuario
+
+            #se saca el modulo de entre 26 por las letras del alfabeto y se suma la base para obtener el valor real a utilizar
+            resultado += chr(nuevoValor)
         else:
-            # Conservar los caracteres no alfabéticos
-            resultado += carac
-    
+            resultado += char
     return resultado
 
+text = input('Ingrese texto a encriptar: ')
 
-# Pedir al usuario el texto y el valor de cambio
-texto = input("Ingresa una línea de texto para encriptar: ")
 while True:
     try:
-        valor_cambio = int(input("Ingresa un valor de cambio (1-25): "))
+        valor_cambio = int(input('Ingresa el valor de cambio del cifrado (1..25): '))
         if 1 <= valor_cambio <= 25:
             break
         else:
@@ -70,8 +63,6 @@ while True:
     except ValueError:
         print("Entrada inválida. Inténtalo de nuevo.")
 
-# Encriptar el texto usando el cifrado César
-texto_encriptado = cifrado_cesar(texto, valor_cambio)
+texto_encriptado = cipher_cesar(text, valor_cambio)
 
-# Imprimir el texto encriptado
-print("Texto encriptado:", texto_encriptado)
+print('Texto encriptado: ', texto_encriptado)
