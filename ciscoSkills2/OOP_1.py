@@ -1,3 +1,5 @@
+
+#Procedural approach
 stack = []
 
 
