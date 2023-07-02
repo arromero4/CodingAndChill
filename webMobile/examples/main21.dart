@@ -23,14 +23,15 @@ bienvenida(String nombre, String tipo, {int posicion = 10}) {
       break;
   }
 
-  descuentoUsuario(descuento);
-  print(
-      '$nombre bienvenido a codigofacilito, en este curso aprenderas DART. $mensaje, se aplicará descuento del $descuento%');
+  double precio = descuentoUsuario(descuento);
+  print('''$nombre bienvenido a codigofacilito, en este curso aprenderas DART. 
+  $mensaje, se aplicará descuento del $descuento%. 
+  Precio con descuento: $precio''');
 }
 
 descuentoUsuario(int descuento) {
   int precio = 1456;
   double aplicarDescuento = (precio * descuento) / 100;
   double precioTotal = precio - aplicarDescuento;
-  print('Precio con descuento: $precioTotal');
+  return precioTotal;
 }
