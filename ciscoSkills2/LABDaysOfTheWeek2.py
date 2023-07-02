@@ -24,35 +24,24 @@ class Weeker:
     #
     # Escribir código aquí.
     #
-    __names  = ['Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom']
+    _valid_days = {'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab', 'Dom'}
 
     def __init__(self, day):
-        #
-        # Escribir código aquí.
-        #
-        try:
-            self.__current = Weeker.__names.index(day)
-            
-        except ValueError:
-            raise WeekDayError
+        if day not in self._valid_days:
+            raise WeekDayError('Dia de la semana invalido')
+        self._day = day
 
     def __str__(self):
-        #
-        # Escribir código aquí.
-        #
-        return Weeker.__names[self.__current]
+        return self._day
     
     def add_days(self, n):
-        #
-        # Escribir código aquí.
-        #
-        self.__current = (self.__current + n) % 7
+        days_list = list(self._valid_days)
+        current_index = days_list.index(self._day)
+        new_index = (current_index + n) % len(days_list)
+        self._day = days_list[new_index]
 
     def subtract_days(self, n):
-        #
-        # Escribir código aquí.
-        #
-        self.__current = (self.__current - n) % 7
+        self.add_days(-n)
 
 try:
     weekday = Weeker('Lun')
