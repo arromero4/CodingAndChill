@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Pages/my_home_page.dart';
+import 'package:flutter_application_1/Widgets/MultiChild/my_colum.dart';
+import 'package:flutter_application_1/Widgets/MultiChild/my_row.dart';
+
+import '../Widgets/MultiChild/my_stack.dart';
 
 class NowPlaylistPage extends StatefulWidget {
   @override
@@ -11,10 +16,7 @@ class NowPlaylistPageState extends State<NowPlaylistPage> {
     // TODO: implement build
     return Scaffold(
       body: SafeArea(
-        child: ElevatedButton(
-          child: Text('My Home Page'),
-          onPressed: () => {},
-        ),
+        child: MyStack(),
       ),
     );
   }

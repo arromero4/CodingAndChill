@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Common/my_routers.dart';
+import 'package:flutter_application_1/Pages/login_page.dart';
 import 'package:flutter_application_1/Pages/my_home_page.dart';
 
 void main() {
@@ -14,11 +16,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: MyRouters.generateRoute,
+      initialRoute: ROUTE_HOME,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }

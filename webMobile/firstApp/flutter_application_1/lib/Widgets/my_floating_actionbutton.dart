@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Common/my_routers.dart';
+import 'package:flutter_application_1/Pages/playlist_page.dart';
 
 class MyFloatingActionButton extends StatelessWidget {
+  VoidCallback voidCallback;
+
+  MyFloatingActionButton(this.voidCallback, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
-      onPressed: () {
-        print('FloatingActionButton');
-      },
+      onPressed: () => voidCallback(),
       backgroundColor: Colors.yellow,
       elevation: 20,
       tooltip: "Agregar usuario",
