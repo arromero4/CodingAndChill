@@ -17,4 +17,8 @@
 # print(3 * 'abc' + 'xyz')
 # print('Mike' > "Mikey")
 
-print(float("1, 3"))
+# print(float("1, 3"))
+
+import random, string
+
+print(''.join(random.choices(string.ascii_lowercase, k=5)))
