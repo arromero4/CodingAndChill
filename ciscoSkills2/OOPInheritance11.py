@@ -1,19 +1,28 @@
-class One:
-    def do_it(self):
-        print("do_it from One")
+import time
 
-    def doanything(self):
-        self.do_it()
-
-
-class Two(One):
-    def do_it(self):
-        print("do_it from Two")
+class Tracks:
+    def change_direction(self, left, on):
+        print("tracks: ", left, on)
 
 
-one = One()
-two = Two()
+class Wheels:
+    def change_direction(self, left, on):
+        print("wheels: ", left, on)
 
-one.doanything()
-two.doanything()
+
+class Vehicle:
+    def __init__(self, controller):
+        self.controller = controller
+
+    def turn(self, left):
+        self.controller.change_direction(left, True)
+        time.sleep(0.25)
+        self.controller.change_direction(left, False)
+
+
+wheeled = Vehicle(Wheels())
+tracked = Vehicle(Tracks())
+
+wheeled.turn(True)
+tracked.turn(False)
     
