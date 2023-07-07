@@ -152,22 +152,46 @@
 # except Exception as e:
 #     print(e)
 
-class I:
-    def __init__(self):
-        self.s = 'abc'
-        self.i = 0
+# class I:
+#     def __init__(self):
+#         self.s = 'abc'
+#         self.i = 0
  
-    def __iter__(self):
-        return self
+#     def __iter__(self):
+#         return self
  
-    def __next__(self):
-        if self.i == len(self.s):
-            raise StopIteration
-        v = self.s[self.i]
-        self.i += 1
-        return v
+#     def __next__(self):
+#         if self.i == len(self.s):
+#             raise StopIteration
+#         v = self.s[self.i]
+#         self.i += 1
+#         return v
  
  
-for x in I():
-    print(x,end='')
+# for x in I():
+#     print(x,end='')
  
+
+ #Se inicializan las variables
+a = 4
+b = 0
+ 
+# # #Se revisa la división entre 0
+# print("El valor de a / b es : ")
+# assert b != 0, "Zero Division Error"
+
+# # Función Lambda para calcular el cuadrado de un número
+# cuadrado = lambda x: x ** 2
+# print(cuadrado (3)) # Resultado: 9
+
+# # Función Lambda para calcular el cuadrado de un número
+# cuadrado = lambda x: x ** 2
+# print(cuadrado (3)) # Resultado: 9
+
+
+# # Funcion tradicional para calcular el cuadrado de un numero
+# def cuadrado1(num):
+#   return num ** 2
+# print(cuadrado1(5)) # Resultado: 25
+
+
