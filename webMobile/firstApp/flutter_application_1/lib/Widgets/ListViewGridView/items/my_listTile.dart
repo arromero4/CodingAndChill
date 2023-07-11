@@ -16,14 +16,16 @@ class MyListTile extends StatelessWidget {
     return ListTile(
       title: Text(
         sound.title,
-        style: TextStyle(fontSize: 30),
       ),
       subtitle: Text(sound.author),
       trailing: InkWell(
         onTap: () => myListViewKey.currentState?.remove(sound),
-        child: Icon(Icons.close),
+        child: IconTheme(
+            data: Theme.of(context).primaryIconTheme, child: Icon(Icons.close)),
       ),
-      leading: Icon(Icons.chrome_reader_mode),
+      leading: IconTheme(
+          data: Theme.of(context).primaryIconTheme,
+          child: Icon(Icons.play_circle_fill)),
       onTap: () {
         myListViewKey.currentState?.update(sound..title = 'Hola', index);
       },

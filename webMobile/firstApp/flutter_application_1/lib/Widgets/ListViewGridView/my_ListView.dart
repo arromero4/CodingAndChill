@@ -24,7 +24,6 @@ class MyListViewState extends State<MyListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
       child: ListView.builder(
         shrinkWrap: true,
         //scrollDirection: Axis.horizontal,

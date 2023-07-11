@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Model/sound.dart';
 import 'package:flutter_application_1/Pages/nowplaylist_page.dart';
+import 'package:flutter_application_1/Values/color_app.dart';
 
 import '../Common/my_keys.dart';
 import '../Widgets/ListViewGridView/items/my_card.dart';
@@ -20,8 +21,9 @@ class PlaylistPageState extends State<PlaylistPage> {
     // TODO: implement build
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () => myListViewKey.currentState
-            ?.add(Sound(title: 'Titulo de cancion', author: 'Autor')),
+        onPressed: () {
+          myAppStateKey.currentState!.changeTheme(ThemeMode.dark);
+        },
         child: Icon(Icons.add),
       ),
       body: SafeArea(
