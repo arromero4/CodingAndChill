@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/counter_app_2.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_application_2/counter_app.dart';
 import 'package:flutter_application_2/text_counter.dart';
@@ -34,11 +35,10 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ChangeNotifierProvider(
-          create: (BuildContext context) {
-            Counter();
-          },
-          child: const MyHomePage(title: 'Flutter Demo Home Page')),
+      home: MultiProvider(providers: [
+        ChangeNotifierProvider(create: (BuildContext context) => Counter()),
+        ChangeNotifierProvider(create: (BuildContext context) => Counter2()),
+      ], child: const MyHomePage(title: 'Flutter Demo Home Page')),
     );
   }
 }
@@ -69,11 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
+            Text(
               'You have pushed the button this many times:',
             ),
             TextCounter()
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: context.read(),
+        onPressed: () => context.read<Counter2>().increment2(),
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
