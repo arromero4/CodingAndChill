@@ -21,9 +21,33 @@ void main() {
 
   String? someValue;
 
-  print(someValue);
+  print(someValue ?? 1);
 
   someValue = 'hello';
 
-  print(someValue);
+  print(someValue ?? 1);
+
+//if statements
+  String someValue = 'Hi!';
+
+  if (someValue != 'Hi!') {
+    print('WOW');
+  } else {
+    print(':(');
+  }
+
+  //TERNARY
+  String value = someValue.startsWith('h') ? 'wow' : 'sad';
+
+  print(value);
+  int age = 20;
+  //SWITCH STATEMENT
+  switch (someValue) {
+    case 'hi!' when age >= 20:
+      print('WOOOOW');
+    case 'Hi!':
+      print(' :( ');
+    default:
+      print('not found');
+  }
 }
