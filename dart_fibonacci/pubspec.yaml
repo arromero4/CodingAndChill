@@ -10,8 +10,9 @@ environment:
 dependencies:
   path: ^1.8.0
   system_resources: ^1.6.0
-  system_resources_2: ^2.0.0
   vm_service: ^11.8.0
+  resource_monitor: ^0.0.2
+  system_info2: ^4.0.0
 
 dev_dependencies:
   lints: ^2.0.0

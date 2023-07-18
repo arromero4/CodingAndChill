@@ -1,49 +1,45 @@
 import 'package:system_resources/system_resources.dart';
 
-void main() {
-  SystemResources.init();
-
-  print('CPU Load Average : ${(SystemResources.cpuLoadAvg() * 100).toInt()}%');
+void main() async {
+  await SystemResources.init();
+  int i = 10;
+  print('----------------------------------------------------------------');
+  print('Recursivo:');
+  final stopwatch1 = Stopwatch()..start();
+  int fibonacciRecursive = fibRecursive(10);
+  print('Fibonacci de $i es: ${fibonacciRecursive.toString()}');
+  stopwatch1.stop();
+  print('Function Execution Time : ${stopwatch1.elapsed}');
   print('Memory Usage     : ${(SystemResources.memUsage() * 100).toInt()}%');
+  print('----------------------------------------------------------------');
+  print('Iterativo:');
+  final stopwatch2 = Stopwatch()..start();
+  int fibonacciIterative = fibIterative(10);
+  print('Fibonacci de $i es: ${fibonacciIterative.toString()}');
+  stopwatch2.stop();
+  print('Function Execution Time : ${stopwatch2.elapsed}');
+  print('Memory Usage     : ${(SystemResources.memUsage() * 100).toInt()}%');
+  print('----------------------------------------------------------------');
 }
 
+//Recursivo
+int fibRecursive(int n) {
+  return n < 2 ? n : (fibRecursive(n - 1) + fibRecursive(n - 2));
+}
 
-  // int i = 10;
-  // print('----------------------------------------------------------------');
-  // print('Recursivo:');
-  // final stopwatch = Stopwatch()..start();
-  // int fibonacciRecursive = fibRecursive(10);
-  // print('Fibonacci de $i es: ${fibonacciRecursive.toString()}');
-  // stopwatch.stop();
-  // print('Function Execution Time : ${stopwatch.elapsed}');
-  // print('----------------------------------------------------------------');
+int fibIterative(int n) {
+  if (n <= 0) return 0;
+  if (n == 1) return 1;
 
-  //int fibonacciIterative = fibIterative(10);
+  int prev = 0;
+  int current = 1;
+  int result = 0;
 
-  //print(fibonacciIterative.toString());
-//}
+  for (int i = 2; i <= n; i++) {
+    result = prev + current;
+    prev = current;
+    current = result;
+  }
 
-// int fibRecursive(n) {
-//   //Recursivo
-//   int fibonacci(int n) {
-//     if (n == 0 || n == 1) return n;
-//     return fibonacci(n - 1) + fibonacci(n - 2);
-//   }
-
-//   var result = fibonacci(n);
-//   return result;
-// }
-
-// int fibIterative(n) {
-//   //iterativo
-//   int n1 = 0, n2 = 1, n3;
-//   print(n1);
-//   print(n2);
-
-//   for (int i = 2; i <= 10; i++) {
-//     n3 = n1 + n2;
-//     print('$n3');
-//     n1 = n2;
-//     n2 = n3;
-//   }
-// }
+  return result;
+}
