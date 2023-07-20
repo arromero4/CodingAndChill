@@ -10,7 +10,7 @@
             "type": "dart",
             //"program": "bin/main.dart",
             "console": "terminal",
-            "program": "hello_world.dart",
+            "program": "main.dart",
         }
     ]
 }
