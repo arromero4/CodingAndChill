@@ -1,8 +1,8 @@
 import 'dart:io';
 
-void swapingNumbers() {
-  print("Enter a number 1:");
+void trimStrings() {
+  print("Enter a String with whitespaces:");
   String n1 = stdin.readLineSync()!;
 
-  print("Result of trim $n1 is ${n1.trim()}");
+  print("Result of trim '$n1' is '${n1.trim()}'");
 }
