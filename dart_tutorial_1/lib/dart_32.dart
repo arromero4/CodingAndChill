@@ -1,8 +1,9 @@
 void main() {
-  bool isMarried = false;
+  bool isMarried = true;
   if (isMarried) {
     print("Pa' que te casas Juan?");
-  } else {
-    print("No gracias, solo estoy viendo!");
   }
+  //else {
+  //   print("No gracias, solo estoy viendo!");
+  // }
 }
