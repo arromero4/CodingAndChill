@@ -7,4 +7,6 @@ void main() {
     print(hi.substring(0, 5));
     print('Hello world ${i + 1}');
   }
+  //if (condition)
+  //else
 }
