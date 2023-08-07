@@ -1,29 +1,36 @@
-void main() {
-  String name = "Andres";
-  //const n = 7;
+import 'package:dart_tutorial_1/dart_4.dart';
+import 'package:dart_tutorial_1/dart_5.dart';
+import 'package:dart_tutorial_1/dart_6.dart';
 
-  print("My name is $name");
-  print("Hello I am 'John Doe' ");
-  print("Hello I'am “John Doe” ");
+void main() async {
+  // Dog dog1 = Dog(name: 'Draco', age: 5, height: 55.5, race: 'Electric');
 
-  // double formula = simpleInterest();
-  // print("The entered num is $formula");
+  // print(dog1.name);
+  // dog1.barking();
 
-  // num square = squareNumber();
-  // print("The square is $square");
+  // Square cuadrado = Square(5);
+  // cuadrado.polygonName();
+  // print(cuadrado.calculateArea());
 
-  //print(fullName());
+  // Pato pato = Pato();
+  // pato.caminar();
+  // pato.nadar();
+  // pato.volar();
 
-  // double quotient = divisionQuotient();
-  // print(quotient);
+  // User andres = User('arromero', '12345');
+  // andres.password = '123456789';
+  // print(andres.username);
+  // print(andres.password);
 
-  // double remainder = divisionQuotient();
-  // print(remainder);
+  DataService dataService = DataService();
+  print('inicio');
 
-  //swapingNumbers();
-  //trimStrings();
+  try {
+    final resp = await dataService.getPokemon();
+    print(resp);
+  } catch (e) {
+    print(e);
+  }
 
-  //stringToIntFn();
-
-  // restaurant();
+  print('fin');
 }

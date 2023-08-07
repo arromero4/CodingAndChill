@@ -8,8 +8,7 @@
             "name": "Dart & Flutter",
             "request": "launch",
             "type": "dart",
-            "program": "lib/dart_46.dart",
-            "console": "terminal"
+            "program": "lib/main.dart",
         }
     ]
 }
