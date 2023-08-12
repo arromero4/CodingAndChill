@@ -1,20 +1,13 @@
-class Dog {
-  String name;
-  int age;
-  double height;
-  String race;
+//Lista de enteros
+List<int> ages = [10, 30, 23];
 
-  Dog(
-      {required this.name,
-      required this.age,
-      required this.height,
-      required this.race});
+//Lista de cadenas de texto
+List<String> names = ["Raj", "John", "Rocky"];
 
-  void barking() {
-    print('$name is barking...');
-  }
+//Lista con elementos de distinto tipo.
+var mixed = [10, "John", 18.8];
 
-  void eating() {
-    print('$name eating because its height is $height ...');
-  }
+void main() {
+  var list = List<int>.filled(5, 0);
+  print(list);
 }
