@@ -5,7 +5,7 @@ void main() {
     'mar': 350.0,
   };
 
-  print("Todas las llaves del Map: ${expenses.keys}");
+  print("Todas las claves del Map: ${expenses.keys}");
   print("Todas los valores del Map: ${expenses.values}");
   print("¿El Map está vacío?: ${expenses.isEmpty}");
   print("¿El Map no está vacío?: ${expenses.isNotEmpty}");

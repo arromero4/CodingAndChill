@@ -5,12 +5,9 @@ void main() {
     'paginas': 464
   };
 
-  //Ciclo a traves de los elementos de un Map
-
-  for (MapEntry book in book.entries) {
-    print('Key es ${book.key}, value es ${book.value}');
-    // Key es titulo, value es Ready Player One
-    // Key es autor, value es Ernest Cline
-    // Key es paginas, value es 464
-  }
+  //Ciclo forEach a traves de los elementos de un Map
+  book.forEach((key, value) => print('Clave: $key - Valor: $value'));
+  // Clave: titulo - Valor: Ready Player One
+  // Clave: autor - Valor: Ernest Cline
+  // Clave: paginas - Valor: 464
 }
