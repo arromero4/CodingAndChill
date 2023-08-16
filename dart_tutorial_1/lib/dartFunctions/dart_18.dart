@@ -2,7 +2,7 @@ void main() {
   const fruits = ["Manzana", "Mango", "Platano", "Naranja"];
 
   //se coloca el parametro
-  fruits.forEach((fruit) {
+  for (var fruit in fruits) {
     print(fruit);
-  });
+  }
 }

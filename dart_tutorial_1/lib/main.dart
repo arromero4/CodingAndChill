@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main() async {
   // Dog dog1 = Dog(name: 'Draco', age: 5, height: 55.5, race: 'Electric');
 
@@ -28,5 +30,8 @@ void main() async {
   //   print(e);
   // }
 
-  // print('fin');
+  File('test.txt').readAsString().then((String contents) {
+    print('File Contents\n---------------');
+    print(contents);
+  });
 }

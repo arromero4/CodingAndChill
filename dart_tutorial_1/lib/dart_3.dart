@@ -1,6 +1,7 @@
-void main() {
-  var list = [210, 21, 22, 33, 44, 55];
+import 'dart:io';
 
-  print(list.indexOf(22)); //index 2
-  print(list.indexOf(33)); //index 3
+void main() {
+  var contents = File('test.txt').readAsStringSync();
+  print('File Contents\n---------------');
+  print(contents);
 }

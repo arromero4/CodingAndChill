@@ -1,9 +1,12 @@
-void main() {
-  List<String> names = ["Meli", "Jaz", "Karla"]; //Lista Mutable
-  names[1] = "Gian"; //Se puede cambiar
-  names[2] = "Randy"; //Se puede cambiar
+// dart program to read from file
+import 'dart:io';
 
-  // const List<String> names = ["Meli", "Jaz", "Karla"]; //Lista Inmutable
-  // names[1] = "Gian"; //No se puede cambiar
-  // names[2] = "Randy"; //No se puede cambiar
+void main() {
+  //Abrir archivo
+  File file = File('test.txt');
+  //Leer primero 10 caracteres
+  String contents = file.readAsStringSync().substring(0, 10);
+  //mostramos
+  print(contents);
+  //Welcome to
 }

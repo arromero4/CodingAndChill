@@ -1,6 +1,6 @@
 void main() {
   //Declaramos el map
-  var countryCapital = new Map();
+  var countryCapital = {};
 
   //Inicializamos el Map
   countryCapital['Mexico'] = 'Ciudad de Mexico';

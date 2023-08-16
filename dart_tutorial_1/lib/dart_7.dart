@@ -1,7 +1,11 @@
+// dart program to read from file
+import 'dart:io';
+
 void main() {
-  List<String> drinks = ["agua", "jugo", "leche", "malteada"];
-  print("El primer elemento de la lista es: ${drinks.first}");
-  //El primer elemento de la lista es: agua
-  print("El último elemento de la lista es: ${drinks.last}");
-  //El último elemento de la lista es: malteada
+  //Abrir archivo
+  File file = File('C:\\Users\\test.txt');
+  //Leer archivo
+  String contents = file.readAsStringSync();
+  //mostramos
+  print(contents);
 }

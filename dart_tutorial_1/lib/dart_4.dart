@@ -1,5 +1,14 @@
+import 'dart:io';
+
 void main() {
-  List<String> names = ["Meli", "Jaz", "Karla"];
-  print(names.length);
-  //el tamaño de la lista es 3
+  //Abrir archivo
+  File file = File('test.txt');
+  //Obtener ruta del archivo
+  print('Ruta del archivo: ${file.path}');
+  //Obtener ruta absoluta del archivo
+  print('Ruta absoluta del archivo: ${file.absolute.path}');
+  //Obtener tamaño archivo
+  print('Tamaño del archivo: ${file.lengthSync()} bytes');
+  //Obtener la ultima que se modificó el archivo
+  print('Última modificación: ${file.lastModifiedSync()}');
 }
