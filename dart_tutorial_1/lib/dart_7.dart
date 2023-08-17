@@ -1,4 +1,3 @@
-// dart program to read from file
 import 'dart:io';
 
 void main() {
