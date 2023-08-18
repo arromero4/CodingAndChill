@@ -1,11 +1,14 @@
-//Programa Dart para leer archivos
-import 'dart:io';
+//definimos el nombre de la clase
+class Animal {
+  //definimos las propiedades/atributos
+  String? name;
+  int? numberOfLegs;
+  int? lifeSpan;
 
-void main() {
-  //Crear un objecto de la clase File
-  File file = File("test.txt");
-  //leer archivo
-  String contents = file.readAsStringSync();
-  //mostrar archivo
-  print(contents);
+  //creamos el metodo
+  void display() {
+    print("Animal name: $name.");
+    print("Number of Legs: $numberOfLegs.");
+    print("Life Span: $lifeSpan.");
+  }
 }
