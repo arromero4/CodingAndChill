@@ -20,6 +20,8 @@ class Bicycle {
 void main() {
   // Creamos el objeto de la clase
   Bicycle bicycle = Bicycle();
+
+  //accedemos a las propiedades y métodos
   bicycle.color = "Red";
   bicycle.size = 26;
   bicycle.currentSpeed = 0;
