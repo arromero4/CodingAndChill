@@ -1,4 +1,4 @@
-enum Gender { Male, Female, Other }
+enum Gender { male, female, other }
 
 class Person {
   // Properties
@@ -18,9 +18,9 @@ class Person {
 }
 
 void main() {
-  Person p1 = Person("John", "Doe", Gender.Male);
+  Person p1 = Person("John", "Doe", Gender.male);
   p1.display();
 
-  Person p2 = Person("Menuka", "Sharma", Gender.Female);
+  Person p2 = Person("Menuka", "Sharma", Gender.female);
   p2.display();
 }
