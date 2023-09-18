@@ -1,21 +1,21 @@
-// Without Generics
-// Creating a class for int
+// SIN GENERICS
+// creando una clase para int
 class IntData {
   int data;
   IntData(this.data);
 }
 
-// Creating a class for double
+// Creando una clase para double
 class DoubleData {
   double data;
   DoubleData(this.data);
 }
 
 void main() {
-  // Create an object of IntData class
+  // Creamos un objeto para int y otro para double
   IntData intData = IntData(10);
   DoubleData doubleData = DoubleData(10.5);
-  // Print the data
+  // Mostramos los datos
   print("IntData: ${intData.data}");
   print("DoubleData: ${doubleData.data}");
 }
